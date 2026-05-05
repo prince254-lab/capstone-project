@@ -7,11 +7,19 @@ function Home() {
   return (
     <>
       <Navbar />
+
+      <section className="hero">
+        <h1>Biggest Deals of the Season</h1>
+        <p>Shop premium gadgets, fashion & accessories</p>
+        <button>Shop Now</button>
+      </section>
+
       <div className="container">
         {products.map((item) => (
           <ProductCard key={item.id} product={item} />
         ))}
       </div>
+
       <Footer />
     </>
   );
