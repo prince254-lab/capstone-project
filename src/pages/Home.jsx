@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
-import Products from "../data/Products";
+import products from "../data/Products";
 
 function Home() {
   return (
@@ -15,7 +15,7 @@ function Home() {
       </section>
 
       <div className="container">
-        {Products.map((item) => (
+        {products.map((item) => (
           <ProductCard key={item.id} product={item} />
         ))}
       </div>
