@@ -1,12 +1,15 @@
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/Footer";
-import products from "../data/Products";
+import products from "../data/products";
 
-function Home() {
+function Home({ addToCart, cart, setShowCart }) {
   return (
     <>
-      <Navbar />
+      <Navbar
+        cartCount={cart.length}
+        setShowCart={setShowCart}
+      />
 
       <section className="hero">
         <h1>Biggest Deals of the Season</h1>
@@ -16,7 +19,11 @@ function Home() {
 
       <div className="container">
         {products.map((item) => (
-          <ProductCard key={item.id} product={item} />
+          <ProductCard
+            key={item.id}
+            product={item}
+            addToCart={addToCart}
+          />
         ))}
       </div>
 
